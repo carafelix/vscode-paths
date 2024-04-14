@@ -1,7 +1,7 @@
 {
   "name": "vscode-paths",
   "displayName": "VScode Paths",
-  "description": "Open vscode installation paths in the explorer",
+  "description": "Open vscode paths in the explorer",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.88.0"
@@ -14,10 +14,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-paths.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-paths.openInstallationFolder",
+        "title": "Open VScode installation folder"
+      },
+      {
+        "command": "vscode-paths.openExtensionsFolder",
+        "title": "Open VScode extension folder"
       }
-    ]
+    ],
+    "menus": {
+      "comments/comment/help": [{
+        "command": "vscode-paths.openExtensionsFolder"
+      },
+      {
+        "command": "vscode-paths.openInstallationFolder"
+      }]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
